@@ -1,60 +1,64 @@
+
+/*
+=======
 @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap"); /*
- * [Modified] Modern CSS Reset
- * @link https://github.com/hankchizljaw/modern-css-reset
-*/
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+
+svg {
+  height: 10px;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-}
-
-html {
-  overflow-x: hidden;
-}
-
-/* Set core body defaults */
 body {
-  min-height: 100vh;
-  font-size: 100%;
-  line-height: 1.5;
-  text-rendering: optimizeSpeed;
-  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 30fr 40fr 30fr;
+}
+body > * {
+  border: 1px solid black;
+}
+body .skip-link {
+  grid-column: 1/4;
+}
+body nav {
+  grid-column: 2/4;
+}
+body .page-footer {
+  grid-column: 1/4;
+}
+body main {
+  grid-column: 1/4;
 }
 
-/* Make images easier to work with */
-img {
-  display: block;
-  max-width: 100%;
+main > div.container {
+  display: grid;
+  grid-template-columns: 30fr 40fr 30fr;
+}
+main > div.container > * {
+  border: 1px solid black;
+}
+main > div.container #about {
+  grid-column: 1/3;
+}
+main > div.container #contribute {
+  grid-column: 1/4;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
+#about {
+  display: grid;
+  grid-template-columns: 40fr 60fr;
+}
+#about > * {
+  border: 1px solid black;
 }
 
-/* Remove all animations and transitions for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+#contribute {
+  display: grid;
+  grid-template-columns: 30fr 40fr 30fr;
+}
+#contribute > * {
+  border: 1px solid black;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*! 
+  * SVGs from Hero Patterns
+  * @link http://www.heropatterns.com/
+  */
+
