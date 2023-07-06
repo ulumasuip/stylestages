@@ -97,5 +97,9 @@ body {
     }
     #guidelines {
         border-right: 3px solid black;
+
+        section.container {
+            height: 100%;
+        }
     }
 }
