@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap");
+:root {
+  --animation-dur: 1.5s;
+}
+
 main p {
   border: 1px solid black;
   border-radius: 50%;
@@ -74,41 +78,137 @@ aside ul {
 @media only screen and (min-width: 1100px) {
   main div.container p {
     visibility: hidden;
+    position: relative;
+    border-color: transparent;
     height: 1em;
     width: 3em;
     padding: 0;
     margin: 0;
-    padding-bottom: var(--space-l);
+    padding-bottom: var(--space-s);
     margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
   }
-  main p::before {
+  main div.container p::before {
     content: "...";
+    position: absolute;
+    top: 0;
     display: inline-block;
     margin: 0 auto;
     width: 50px;
+    height: 24px;
     border: 1px solid black;
     border-radius: 50%;
     visibility: visible;
   }
+  main div.container article p:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  main div.container p:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  @keyframes beforeElement {
+    0% {
+      content: "";
+      opacity: 1;
+      width: 50px;
+      height: 24px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+    90% {
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      border-radius: 50%;
+    }
+  }
+  @keyframes wholeElement {
+    0% {
+      visibility: hidden;
+      height: auto;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      padding: var(--space-s);
+      padding-bottom: var(--space-s);
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+    }
+    90% {
+      visibility: hidden;
+      height: auto;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      padding: var(--space-s);
+      padding-bottom: var(--space-s);
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+    }
+    91% {
+      visibility: visible;
+      height: auto;
+      width: auto;
+      margin: 0;
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+      padding: var(--space-s);
+    }
+  }
   main div.container blockquote p:first-of-type {
     margin-left: var(--space-2xs);
-    margin-right: auto;
+    margin-right: var(--space-2xs);
+  }
+  main div.container blockquote p:first-of-type::before {
+    left: 0;
   }
   main div.container p:nth-child(odd) {
     margin-left: auto;
     margin-right: var(--space-2xs);
   }
+  main section.container > p:nth-child(odd)::before {
+    right: 0;
+  }
+  main section.container > p:nth-child(even)::before {
+    left: 0;
+  }
+  main #guidelines section.container > p:nth-of-type(odd)::before {
+    right: initial;
+    left: 0;
+  }
+  main #guidelines section.container > p:nth-of-type(even)::before {
+    right: 0;
+    left: initial;
+  }
   main ul {
     visibility: hidden;
+    position: relative;
+    border-color: transparent;
     height: 1em;
     width: 3em;
     padding: 0;
+    padding-bottom: var(--space-s);
     margin: 0;
-    padding-bottom: var(--space-l);
     margin-left: var(--space-2xs);
   }
   main ul::before {
     content: "...";
+    position: absolute;
+    top: 0;
+    left: 0;
     display: inline-block;
     margin: 0 auto;
     width: 50px;
@@ -116,15 +216,59 @@ aside ul {
     border-radius: 50%;
     visibility: visible;
   }
+  main ul:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  main ul:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  main ol:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  main ol:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
   main ol {
+    list-style-position: inside;
+    border-color: transparent;
     visibility: hidden;
+    position: relative;
     height: 1em;
     width: 3em;
     padding: 0;
-    margin: 0 auto;
+    padding-bottom: var(--space-s);
+    margin: 0;
+    margin-left: var(--space-2xs);
   }
   main ol::before {
     content: "...";
+    position: absolute;
+    top: 0;
+    left: 0;
     display: inline-block;
     margin: 0 auto;
     width: 50px;
@@ -138,21 +282,46 @@ aside ul {
 
   aside ul {
     visibility: hidden;
+    position: relative;
+    border-color: transparent;
     height: 1em;
     width: 3em;
     padding: 0;
     margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
     padding-bottom: var(--space-l);
     margin-left: var(--space-2xs);
   }
   aside ul::before {
     content: "...";
+    position: absolute;
+    top: 0;
+    left: 0;
     display: inline-block;
     margin: 0 auto;
     width: 50px;
     border: 1px solid black;
     border-radius: 50%;
     visibility: visible;
+  }
+  aside ul:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  aside ul:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    content: "";
+    width: 100%;
+    height: 100%;
   }
 }
 /*
@@ -267,6 +436,7 @@ body {
   }
 
   body {
+    overflow: hidden;
     display: grid;
     grid-template-columns: 30fr 20fr 20fr 30fr;
     row-gap: var(--space-s);
