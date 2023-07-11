@@ -111,6 +111,10 @@ aside ul {
     margin-right: var(--space-2xs);
     padding: var(--space-s);
   }
+  main #guidelines section.container p:hover {
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+  }
   main div.container p:hover::before {
     animation-name: beforeElement;
     animation-duration: var(--animation-dur);

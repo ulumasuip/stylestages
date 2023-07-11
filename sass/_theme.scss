@@ -124,6 +124,11 @@ aside {
             padding: var(--space-s);
         }
 
+        #guidelines section.container p:hover {
+            margin-left: var(--space-2xs);
+            margin-right: var(--space-2xs);
+        }
+
         div.container p:hover::before {
             animation-name: beforeElement;
             animation-duration: var(--animation-dur);
