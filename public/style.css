@@ -243,7 +243,7 @@ aside ul {
     margin: 0;
     margin-left: var(--space-2xs);
     margin-right: var(--space-2xs);
-    padding: var(--space-s);
+    padding: var(--space-s) var(--space-2xl);
   }
   main ol:hover::before {
     animation-name: beforeElement;
@@ -407,13 +407,6 @@ body {
   background-size: contain;
 }
 
-nav {
-  background-image: url("./note_2.jpg");
-  background-size: cover;
-  margin: 0 auto;
-  width: 60%;
-}
-
 @media only screen and (max-width: 1100px) {
   article {
     border: 3px solid black;
@@ -434,10 +427,6 @@ nav {
   }
 }
 @media only screen and (min-width: 1100px) {
-  nav {
-    width: 100%;
-  }
-
   h2 {
     padding-top: var(--space-3xs);
   }
@@ -513,6 +502,18 @@ nav {
   }
   #guidelines section.container {
     height: 100%;
+  }
+}
+nav {
+  background-image: url("./note_2.jpg");
+  background-size: cover;
+  margin: 0 auto;
+  width: 60%;
+}
+
+@media only screen and (min-width: 1100px) {
+  nav {
+    width: 100%;
   }
 }
 /*! 
