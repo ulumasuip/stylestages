@@ -184,6 +184,40 @@ aside {
             }
         }
 
+        @keyframes olElement {
+            0% {
+                visibility: hidden;
+                height: auto;
+                width: auto;
+                padding: 0;
+                margin: 0;
+                padding: var(--space-s);
+                padding-bottom: var(--space-s);
+                margin-left: var(--space-2xs);
+                margin-right: var(--space-2xs);
+            }
+            90% {
+                visibility: hidden;
+                height: auto;
+                width: auto;
+                padding: 0;
+                margin: 0;
+                padding: var(--space-s) var(--space-2xl);
+                padding-bottom: var(--space-s);
+                margin-left: var(--space-2xs);
+                margin-right: var(--space-2xs);
+            }
+            91% {
+                visibility: visible;
+                height: auto;
+                width: auto;
+                margin: 0;
+                margin-left: var(--space-2xs);
+                margin-right: var(--space-2xs);
+                padding: var(--space-s) var(--space-2xl);
+            }
+        }
+
         div.container blockquote p:first-of-type {
             margin-left: var(--space-2xs);
             margin-right: var(--space-2xs);
@@ -262,7 +296,7 @@ aside {
         }
 
         ol:hover {
-            animation-name: wholeElement;
+            animation-name: olElement;
             animation-duration: var(--animation-dur);
             visibility: visible;
             height: auto;
