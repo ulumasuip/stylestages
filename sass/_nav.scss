@@ -1,0 +1,12 @@
+nav {
+    background-image: url('./note_2.jpg');
+    background-size: cover;
+    margin: 0 auto;
+    width: 60%;
+}
+
+@media only screen and (min-width: 1100px) {
+    nav {
+        width: 100%;
+    }
+}
