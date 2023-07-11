@@ -542,8 +542,8 @@ body {
   }
 }
 nav {
-  background-image: url("./note_2.jpg");
-  background-size: cover;
+  background-image: url("./sticky note.png");
+  background-size:cover;
   margin: 0 auto;
   width: 60%;
 }
