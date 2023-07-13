@@ -468,6 +468,10 @@ body {
   }
 }
 @media only screen and (min-width: 1100px) {
+  body {
+    background-size: covers;
+  }
+
   h2 {
     padding-top: var(--space-3xs);
   }
@@ -547,16 +551,12 @@ body {
 }
 nav {
   background-image: url("./sticky note.png");
-  background-size: cover;
   margin: 0 auto;
-  width: 60%;
+  width: 178px;
+  height: 178px;
+  box-shadow: 3px 3px 5px black;
 }
 
-@media only screen and (min-width: 1100px) {
-  nav {
-    width: 100%;
-  }
-}
 /*! 
   * SVGs from Hero Patterns
   * @link http://www.heropatterns.com/
