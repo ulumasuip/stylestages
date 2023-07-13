@@ -1,18 +1,569 @@
-/* Error: expected "{".
- *   ,
- * 3 |     background-image: url('./mobile nav background.png');
- *   |                                                         ^
- *   '
- *   sass\_nav.scss 3:57   @import
- *   sass\style.scss 13:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: expected \"{\".\a   \2577 \a 3 \2502      background-image: url('./mobile nav background.png');\d\a   \2502                                                          ^\a   \2575 \a   sass\\_nav.scss 3:57   @import\a   sass\\style.scss 13:9  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap");
+:root {
+  --animation-dur: 1.5s;
 }
+
+main p {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: var(--space-xl) var(--space-s);
+  text-align: center;
+  width: 60%;
+  margin-left: var(--space-2xs);
+  margin-right: auto;
+}
+main p:nth-child(odd) {
+  margin-left: auto;
+  margin-right: var(--space-2xs);
+}
+main blockquote {
+  margin: 0;
+}
+main .container blockquote p {
+  margin-left: var(--space-2xs);
+  margin-top: calc(var(--space-l) * -1);
+  margin-right: auto;
+}
+main h2, main h3 {
+  text-align: center;
+}
+main p:not(:first-of-type) {
+  margin-top: calc(var(--space-l) * -1);
+}
+main #guidelines p:nth-child(2n+4) {
+  margin-left: auto;
+  margin-right: var(--space-2xs);
+}
+main #guidelines p:nth-child(odd) {
+  margin-right: auto;
+  margin-left: var(--space-2xs);
+}
+main #guidelines h3 {
+  margin-top: calc(var(--space-l) * -1);
+  margin-bottom: var(--space-2xs);
+}
+main ul {
+  columns: 2;
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: var(--space-xl) var(--space-s);
+  text-align: center;
+  list-style-type: none;
+  width: 60%;
+  margin-left: var(--space-2xs);
+  margin-top: calc(var(--space-l) * -1);
+}
+main ol {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: var(--space-l) var(--space-xl);
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+aside h2, aside h4 {
+  text-align: center;
+}
+aside ul {
+  border: 1px solid black;
+  border-radius: 50%;
+  padding: var(--space-xl) var(--space-s);
+  text-align: center;
+  list-style-type: none;
+  margin: 0 auto;
+  width: 60%;
+}
+
+@media only screen and (min-width: 1100px) {
+  main div.container p {
+    visibility: hidden;
+    position: relative;
+    border-color: transparent;
+    height: 1em;
+    width: 3em;
+    padding: 0;
+    margin: 0;
+    padding-bottom: var(--space-s);
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+  }
+  main div.container p::before {
+    content: "...";
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    margin: 0 auto;
+    width: 50px;
+    height: 24px;
+    border: 1px solid black;
+    border-radius: 50%;
+    visibility: visible;
+  }
+  main div.container article p:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  main #guidelines section.container p:hover {
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+  }
+  main div.container p:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  @keyframes beforeElement {
+    0% {
+      content: "";
+      opacity: 1;
+      width: 50px;
+      height: 24px;
+      border: 1px solid black;
+      border-radius: 50%;
+    }
+    90% {
+      content: "";
+      width: 100%;
+      height: 100%;
+      opacity: 1;
+      border-radius: 50%;
+    }
+  }
+  @keyframes wholeElement {
+    0% {
+      visibility: hidden;
+      height: auto;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      padding: var(--space-s);
+      padding-bottom: var(--space-s);
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+    }
+    90% {
+      visibility: hidden;
+      height: auto;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      padding: var(--space-s);
+      padding-bottom: var(--space-s);
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+    }
+    91% {
+      visibility: visible;
+      height: auto;
+      width: auto;
+      margin: 0;
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+      padding: var(--space-s);
+    }
+  }
+  @keyframes olElement {
+    0% {
+      visibility: hidden;
+      height: auto;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      padding: var(--space-s);
+      padding-bottom: var(--space-s);
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+    }
+    90% {
+      visibility: hidden;
+      height: auto;
+      width: auto;
+      padding: 0;
+      margin: 0;
+      padding: var(--space-s) var(--space-2xl);
+      padding-bottom: var(--space-s);
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+    }
+    91% {
+      visibility: visible;
+      height: auto;
+      width: auto;
+      margin: 0;
+      margin-left: var(--space-2xs);
+      margin-right: var(--space-2xs);
+      padding: var(--space-s) var(--space-2xl);
+    }
+  }
+  main div.container blockquote p:first-of-type {
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+  }
+  main div.container blockquote p:first-of-type::before {
+    left: 0;
+  }
+  main div.container p:nth-child(odd) {
+    margin-left: auto;
+    margin-right: var(--space-2xs);
+  }
+  main section.container > p:nth-child(odd)::before {
+    right: 0;
+  }
+  main section.container > p:nth-child(even)::before {
+    left: 0;
+  }
+  main #guidelines section.container > p:nth-of-type(odd)::before {
+    right: initial;
+    left: 0;
+  }
+  main #guidelines section.container > p:nth-of-type(even)::before {
+    right: 0;
+    left: initial;
+  }
+  main ul {
+    visibility: hidden;
+    position: relative;
+    border-color: transparent;
+    height: 1em;
+    width: 3em;
+    padding: 0;
+    padding-bottom: var(--space-s);
+    margin: 0;
+    margin-left: var(--space-2xs);
+  }
+  main ul::before {
+    content: "...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 0 auto;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    visibility: visible;
+  }
+  main ul:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  main ul:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  main ol:hover {
+    animation-name: olElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s) var(--space-2xl);
+  }
+  main ol:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  main ol {
+    list-style-position: inside;
+    border-color: transparent;
+    visibility: hidden;
+    position: relative;
+    height: 1em;
+    width: 3em;
+    padding: 0;
+    padding-bottom: var(--space-s);
+    margin: 0;
+    margin-left: var(--space-2xs);
+  }
+  main ol::before {
+    content: "...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 0 auto;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    visibility: visible;
+  }
+  main #guidelines h3 {
+    margin: 0;
+  }
+
+  aside ul {
+    visibility: hidden;
+    position: relative;
+    border-color: transparent;
+    height: 1em;
+    width: 3em;
+    padding: 0;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding-bottom: var(--space-l);
+    margin-left: var(--space-2xs);
+  }
+  aside ul::before {
+    content: "...";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    margin: 0 auto;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    visibility: visible;
+  }
+  aside ul:hover {
+    animation-name: wholeElement;
+    animation-duration: var(--animation-dur);
+    visibility: visible;
+    height: auto;
+    width: auto;
+    margin: 0;
+    margin-left: var(--space-2xs);
+    margin-right: var(--space-2xs);
+    padding: var(--space-s);
+  }
+  aside ul:hover::before {
+    animation-name: beforeElement;
+    animation-duration: var(--animation-dur);
+    content: "";
+    width: 100%;
+    height: 100%;
+  }
+}
+/*
+ * [Modified] Modern CSS Reset
+ * @link https://github.com/hankchizljaw/modern-css-reset
+*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  overflow-x: hidden;
+}
+
+/* Make images easier to work with */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+svg {
+  height: 10px;
+}
+
+body {
+  font-family: "Coming Soon", cursive;
+}
+
+h2, h3, h4 {
+  font-size: var(--space-xs);
+}
+
+:root {
+  --space-3xs: clamp(0.31rem, calc(0.25rem + 0.33vw), 0.50rem);
+  --space-2xs: clamp(0.56rem, calc(0.43rem + 0.65vw), 0.94rem);
+  --space-xs: clamp(0.88rem, calc(0.68rem + 0.98vw), 1.44rem);
+  --space-s: clamp(1.13rem, calc(0.86rem + 1.30vw), 1.88rem);
+  --space-m: clamp(1.69rem, calc(1.30rem + 1.96vw), 2.81rem);
+  --space-l: clamp(2.25rem, calc(1.73rem + 2.61vw), 3.75rem);
+  --space-xl: clamp(3.38rem, calc(2.59rem + 3.91vw), 5.63rem);
+  --space-2xl: clamp(4.50rem, calc(3.46rem + 5.22vw), 7.50rem);
+  --space-3xl: clamp(6.75rem, calc(5.18rem + 7.83vw), 11.25rem);
+}
+
+body {
+  background-image: url("https://c1.wallpaperflare.com/preview/400/918/406/paper-background-writing-school.jpg");
+  background-size: contain;
+}
+
+@media only screen and (max-width: 1100px) {
+  article {
+    border: 3px solid black;
+    margin: 0 auto;
+    margin-bottom: var(--space-s);
+    width: 90%;
+  }
+
+  aside {
+    border: 3px solid black;
+    margin: 0 auto;
+    margin-bottom: var(--space-s);
+    width: 90%;
+  }
+
+  #about section.container:first-child {
+    border-bottom: 3px solid black;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  body {
+    background-size: covers;
+  }
+
+  h2 {
+    padding-top: var(--space-3xs);
+  }
+
+  section.container, #files, aside {
+    border: 3px solid black;
+  }
+
+  section.container {
+    border-right: 0;
+  }
+
+  body {
+    padding-left: var(--space-s);
+    padding-right: var(--space-s);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 30fr 20fr 20fr 30fr;
+    row-gap: var(--space-s);
+  }
+  body .skip-link {
+    grid-column: 1/5;
+  }
+  body nav {
+    grid-column: 3/4;
+  }
+  body .page-footer {
+    grid-column: 1/5;
+  }
+  body main {
+    grid-column: 1/5;
+    grid-row: 3/5;
+    padding-top: var(--space-s);
+    padding-bottom: var(--space-s);
+  }
+  body .profile {
+    grid-column: 1/3;
+    border-right: 0;
+  }
+  body #styles {
+    grid-column: 3/5;
+  }
+
+  main > div.container {
+    display: grid;
+    grid-template-columns: 30fr 40fr 30fr;
+    row-gap: var(--space-s);
+  }
+  main > div.container #about {
+    grid-column: 1/3;
+  }
+  main > div.container #contribute {
+    grid-column: 1/4;
+  }
+
+  #about {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    row-gap: var(--space-s);
+  }
+
+  #contribute {
+    display: grid;
+    grid-template-columns: 35fr 65fr 20fr;
+    row-gap: var(--space-s);
+  }
+  #contribute h2 {
+    padding-top: 0;
+  }
+
+  #guidelines {
+    border-right: 3px solid black;
+  }
+  #guidelines section.container {
+    height: 100%;
+  }
+}
+nav {
+  background-image: url("./mobile nav background.png");
+  background-size: cover;
+  margin: 0 auto;
+  width: 50%;
+  box-shadow: 4px 4px 3px;
+}
+
+@media only screen and (min-width: 1100px) {
+  nav {
+    background-image: url("./sticky note.png");
+    width: 100%;
+  }
+}
+/*! 
+  * SVGs from Hero Patterns
+  * @link http://www.heropatterns.com/
+  */
